@@ -10,6 +10,7 @@
   
   .wave-bg {
     position: relative;
+    
     width: 100%;
     height: 50vh;
   }
@@ -19,6 +20,8 @@
     padding: 20px;
     color: #4d1616;
     position: relative;
+    display:flex;
+    flex-direction: column;
   }
   
   h1 {
@@ -34,6 +37,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
   }
   
   button:hover {
@@ -56,8 +61,6 @@
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    margin: 140px;
-    margin-right: 1000px;
     height: 55px;
     height: 70px;
     text-align:center;
@@ -97,7 +100,6 @@
     color: #fff;
     cursor: pointer;
     margin: 0px;
-    margin-right: 850px;
     height: 55px;
     height: 70px;
 

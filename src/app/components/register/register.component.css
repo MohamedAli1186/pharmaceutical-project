@@ -49,6 +49,13 @@ input {
   border-radius: 5px;
   width: 100%;
 }
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
 
 button {
   padding: 10px 20px;
@@ -62,4 +69,13 @@ button {
 
 button:hover {
   background-color: #82C3AD;
+}
+
+#docsLabel {
+  cursor: pointer;
+  /* Style as you please, it will become the visible UI component. */
+}
+
+#docs {
+  opacity: 40%;
 }

@@ -4,25 +4,26 @@
       <section class="container">
         <div class="wave"></div>
       </section>
-      <h1>إنشاء حساب</h1>
-      <form>
+      <h1>تسجيل مؤسسة</h1>
+      <form dir="rtl">
         <div class="input-column">
           <div class="input-container">
             <input
               type="text"
-              id="fullName"
-              name="fullName"
-              placeholder=" اسم المستخدم"
+              id="username"
+              name="username"
+              placeholder="* اسم المستخدم"
               style="width: 90%"
               required
             />
           </div>
+       
           <div class="input-container">
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="حالة المستخدم"
+              placeholder=" البريد الالكتروني"
               style="width: 90%"
               required
             />
@@ -32,7 +33,7 @@
               type="password"
               id="password"
               name="password"
-              placeholder=" البريد الالكتروني"
+              placeholder="* كلمة المرور"
               style="width: 90%"
               required
             />
@@ -42,27 +43,29 @@
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              placeholder=" كلمة المرور"
+              placeholder="* تأكيد  كلمة المرور"
               style="width: 90%"
               required
             />
           </div>
           <div class="input-container">
             <input
-              type="text"
-              id="address"
-              name="address"
-              placeholder="تأكيد  كلمة المرور"
+              dir="rtl"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="* رقم الهاتف المحمول"
               style="width: 90%"
               required
             />
           </div>
           <div class="input-container">
             <input
+              dir="rtl"
               type="text"
-              id="city"
-              name="city"
-              placeholder="رقم الهاتف المحمول"
+              id="NID"
+              name="NID"
+              placeholder="* الرقم القومي"
               style="width: 90%"
               required
             />
@@ -72,58 +75,56 @@
           <div class="input-container">
             <input
               type="text"
-              id="country"
-              name="country"
-              placeholder=" اسم المؤسسة "
+              id="orgName"
+              name="orgName"
+              placeholder="* اسم المؤسسة "
               style="width: 90%"
               required
             />
           </div>
           <div class="input-container">
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              placeholder="حاله المؤسسة"
-              style="width: 90%"
-              required
-            />
+            <select id="orgType" name="orgType" style="width: 90%" required>
+              <option value="" disabled selected>اختر نوع المؤسسة *</option>
+              <option value="banking">مؤسسة بنكية</option>
+              <option value="finance">مؤسسة تمويل</option>
+              <option value="wholesale">مؤسسة بيع بالجملة</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <div class="input-container">
+              <select id="orgStat" name="orgStat" style="width: 90%" required>
+                <option value="" disabled selected>اختر حالة المؤسسة *</option>
+                <option value="banking">نشط</option>
+                <option value="finance">غير نشط</option>
+              </select>
+            </div>
           </div>
           <div class="input-container">
             <input
               type="text"
-              id="dob"
-              name="dob"
-              placeholder="نوع المؤسسة"
-              style="width: 90%"
-              required
-            />
-          </div>
-          <div class="input-container">
-            <input
-              type="text"
-              id="gender"
-              name="gender"
+              id="financialCode"
+              name="financialCode"
               placeholder="كود مالى المؤسسة"
               style="width: 90%"
-              required
             />
           </div>
           <div class="input-container">
             <input
               type="text"
-              id="occupation"
-              name="occupation"
-              placeholder="كود الترخيص"
+              id="lisenceCode"
+              name="lisenceCode"
+              placeholder="* كود الترخيص"
               style="width: 90%"
               required
             />
           </div>
           <div class="input-container">
+            <label id="docsLabel" for="docs" style="margin-top: 4px;">رفع ملحقات </label>
             <input
-              type="text"
-              id="education"
-              name="education"
+              type="file"
+              multiple = "true"
+              id="docs"
+              name="docs"
               placeholder="ملحقات"
               style="width: 90%"
               required
@@ -134,29 +135,17 @@
           <div class="input-container">
             <input
               type="text"
-              id="interests"
-              name="interests"
-              placeholder="الحد المالى من"
+              id="bankAccount"
+              name="bankAccount"
+              placeholder="حساب البنك"
               style="width: 90%"
-              required
             />
           </div>
-          <div class="input-container">
-            <input
-              type="text"
-              id="interests"
-              name="interests"
-              placeholder="الحد المالى الى"
-              style="width: 90%"
-              required
-            />
-          </div>
-          <button type="submit">إنشاء حساب جديد</button>
+          <button type="submit">تسجيل المؤسسة</button>
           <br />
           <br />
-          <div class="forgot-password">
-            <a href="login">هل لديك حساب؟تسجيل الدخول</a>
-          </div>
+          <button><a href="main" style="text-decoration: none; color: white;">الغاء</a></button>
+
         </div>
       </form>
     </div>
