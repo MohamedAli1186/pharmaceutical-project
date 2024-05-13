@@ -1,7 +1,7 @@
 // permissions.model.ts
 
 export class Permissions {
-    constructor(
+  constructor(
     permissionId: number,
     mobileNumber: string, // Assuming mobile number as string for international support
     orgAdminId: number,
@@ -12,9 +12,6 @@ export class Permissions {
     serviceAgent: boolean,
     fieldAgent: boolean,
     inventoryWorker: boolean,
-    consumer: boolean){}
-   
+    consumer: boolean
+  ) {}
 }
-  
-
-
