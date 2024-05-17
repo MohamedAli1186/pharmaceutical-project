@@ -10,7 +10,7 @@ export class User {
     mobileNumber: string, // Assuming mobile number as string for international support
     nationalId: string, // Assuming national ID as string
     email: string,
-   
+    businessUserId:number
      )     {}
   }
   

@@ -1,7 +1,7 @@
-export class Invoice {
-  constructor(
+export interface Invoice {
+  
     PaymentReference: string,
-    PaymentOption: 'Cash' | 'Credit' | 'Balance',
+    PaymentOption: 'كاش' | 'حساب بنكي' | 'رصيد',
     InvoiceDate: Date,
     InvoiceAmount: number,
     OrganizationID: number,
@@ -9,5 +9,4 @@ export class Invoice {
     OrderID: number,
     OrderDate: Date,
     Username: string
-  ) {}
 }

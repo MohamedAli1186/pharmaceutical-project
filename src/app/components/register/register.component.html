@@ -5,24 +5,34 @@
         <div class="wave"></div>
       </section>
       <h1>تسجيل مؤسسة</h1>
-      <form dir="rtl">
+      <form #registerForm="ngForm" (submit)="createOrg(registerForm)" dir="rtl">
         <div class="input-column">
           <div class="input-container">
             <input
               type="text"
               id="username"
               name="username"
+              [(ngModel)]="userName"
               placeholder="* اسم المستخدم"
               style="width: 90%"
               required
             />
+            <div
+              *ngIf="submitted && registerForm.controls['username'].errors?.['required']"
+              class="requiredField"
+            >
+              هذا الحقل مطلوب
+            </div>
+
+            <!-- <div *ngIf="submitted && registerForm.controls['username'].invalid && (submitted && registerForm.controls['username'].dirty || submitted && submitted && registerForm.controls['username'].touched)" class="error-message"></div> -->
           </div>
-       
+
           <div class="input-container">
             <input
               type="email"
               id="email"
               name="email"
+              [(ngModel)]="email"
               placeholder=" البريد الالكتروني"
               style="width: 90%"
               required
@@ -33,20 +43,34 @@
               type="password"
               id="password"
               name="password"
+              [(ngModel)]="password"
               placeholder="* كلمة المرور"
               style="width: 90%"
               required
             />
+            <div
+              *ngIf="submitted && registerForm.controls['password'].errors?.['required']"
+              class="requiredField"
+            >
+              هذا الحقل مطلوب
+            </div>
           </div>
           <div class="input-container">
             <input
               type="password"
               id="confirmPassword"
               name="confirmPassword"
+              [(ngModel)]="confirmPassword"
               placeholder="* تأكيد  كلمة المرور"
               style="width: 90%"
               required
             />
+            <div
+              *ngIf="submitted && registerForm.controls['confirmPassword'].errors?.['required']"
+              class="requiredField"
+            >
+              هذا الحقل مطلوب
+            </div>
           </div>
           <div class="input-container">
             <input
@@ -54,10 +78,17 @@
               type="tel"
               id="phone"
               name="phone"
+              [(ngModel)]="phone"
               placeholder="* رقم الهاتف المحمول"
               style="width: 90%"
               required
             />
+            <div
+              *ngIf="submitted && registerForm.controls['phone'].errors?.['required']"
+              class="requiredField"
+            >
+              هذا الحقل مطلوب
+            </div>
           </div>
           <div class="input-container">
             <input
@@ -66,9 +97,16 @@
               id="NID"
               name="NID"
               placeholder="* الرقم القومي"
+              [(ngModel)]="NId"
               style="width: 90%"
               required
             />
+            <div
+              *ngIf="submitted && registerForm.controls['NID'].errors?.['required']"
+              class="requiredField"
+            >
+              هذا الحقل مطلوب
+            </div>
           </div>
         </div>
         <div class="input-column">
@@ -78,25 +116,56 @@
               id="orgName"
               name="orgName"
               placeholder="* اسم المؤسسة "
+              [(ngModel)]="orgName"
               style="width: 90%"
               required
             />
+            <div
+              *ngIf="submitted && registerForm.controls['orgName'].errors?.['required']"
+              class="requiredField"
+            >
+              هذا الحقل مطلوب
+            </div>
           </div>
           <div class="input-container">
-            <select id="orgType" name="orgType" style="width: 90%" required>
+            <select
+              id="orgType"
+              name="orgType"
+              style="width: 90%"
+              [(ngModel)]="orgType"
+              required
+            >
               <option value="" disabled selected>اختر نوع المؤسسة *</option>
               <option value="banking">مؤسسة بنكية</option>
               <option value="finance">مؤسسة تمويل</option>
               <option value="wholesale">مؤسسة بيع بالجملة</option>
             </select>
+            <div
+              *ngIf="submitted && registerForm.controls['orgType'].errors?.['required']"
+              class="requiredField"
+            >
+              هذا الحقل مطلوب
+            </div>
           </div>
           <div class="input-container">
             <div class="input-container">
-              <select id="orgStat" name="orgStat" style="width: 90%" required>
+              <select
+                id="orgStat"
+                name="orgStat"
+                style="width: 90%"
+                [(ngModel)]="orgStatus"
+                required
+              >
                 <option value="" disabled selected>اختر حالة المؤسسة *</option>
                 <option value="banking">نشط</option>
                 <option value="finance">غير نشط</option>
               </select>
+              <div
+                *ngIf="submitted && registerForm.controls['orgStat'].errors?.['required']"
+                class="requiredField"
+              >
+                هذا الحقل مطلوب
+              </div>
             </div>
           </div>
           <div class="input-container">
@@ -104,6 +173,7 @@
               type="text"
               id="financialCode"
               name="financialCode"
+              [(ngModel)]="financialCode"
               placeholder="كود مالى المؤسسة"
               style="width: 90%"
             />
@@ -111,20 +181,31 @@
           <div class="input-container">
             <input
               type="text"
-              id="lisenceCode"
+              id="lisenceCode" 
               name="lisenceCode"
-              placeholder="* كود الترخيص"
+              [(ngModel)]="liscenceCode"
+              placeholder="* رقم السجل التجاري"
               style="width: 90%"
               required
             />
+
+            <div
+              *ngIf="submitted && registerForm.controls['lisenceCode'].errors?.['required']"
+              class="requiredField"
+            >
+              هذا الحقل مطلوب
+            </div>
           </div>
           <div class="input-container">
-            <label id="docsLabel" for="docs" style="margin-top: 4px;">رفع ملحقات </label>
+            <label id="docsLabel" for="docs" style="margin-top: 4px"
+              >رفع ملحقات
+            </label>
             <input
               type="file"
-              multiple = "true"
+              multiple="true"
               id="docs"
               name="docs"
+              [(ngModel)]="docs"
               placeholder="ملحقات"
               style="width: 90%"
               required
@@ -137,6 +218,7 @@
               type="text"
               id="bankAccount"
               name="bankAccount"
+              [(ngModel)]="bankAccount"
               placeholder="حساب البنك"
               style="width: 90%"
             />
@@ -144,8 +226,9 @@
           <button type="submit">تسجيل المؤسسة</button>
           <br />
           <br />
-          <button><a href="main" style="text-decoration: none; color: white;">الغاء</a></button>
-
+          <button>
+            <a href="main" style="text-decoration: none; color: white">الغاء</a>
+          </button>
         </div>
       </form>
     </div>

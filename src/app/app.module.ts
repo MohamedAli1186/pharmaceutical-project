@@ -12,6 +12,7 @@ import { MainComponent } from './components/main/main.component';
 import { FawaterComponent } from './components/fawater/fawater.component';
 import { TalabatComponent } from './components/talabat/talabat.component';
 import { TfaselComponent } from './components/tfasel/tfasel.component';
+import { TfaselFatoraComponent } from './components/tfasel-fatora/tfasel-fatora.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TfaselComponent } from './components/tfasel/tfasel.component';
     FawaterComponent,
     TalabatComponent,
     TfaselComponent,
+    TfaselFatoraComponent
    
   ],
   imports: [

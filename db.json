@@ -1,67 +1,66 @@
 {
-  "users": [
+  "orgs": [
     {
-      "email": "user1@gmail.com",
-      "role": "user",
-      "password": "user1",
-      "userid": 974,
-      "id": 1,
-      "name": "user1",
-      "status": "logged in"
+      "orgId": 123,
+      "orgName": "ABC Bank",
+      "orgType": "banking",
+      "orgStatus": true,
+      "licenseId": 456,
+      "financialIdentifier": 789,
+      "attachments": [
+        "https://example.com/logo.png",
+        "https://example.com/banner.jpg"
+      ],
+      "bankAccountNumber": 987654321
     },
     {
-      "email": "admin@gmail.com",
-      "role": "admin",
-      "password": "admin",
-      "id": 3,
-      "name": "admin",
-      "status": "logged in"
-    },
-    {
-      "name": "Farhan",
-      "email": "farhan123@gmail.com",
-      "userid": 175,
-      "role": "user",
-      "status": "logged out",
-      "password": "far123",
-      "id": 5
+      "orgId": 1234,
+      "orgName": "gg Bank",
+      "orgType": "Wholesale",
+      "orgStatus": true,
+      "licenseId": 456,
+      "financialIdentifier": 789,
+      "attachments": [
+        "https://example.com/logo.png",
+        "https://example.com/banner.jpg"
+      ],
+      "bankAccountNumber": 987654321
     }
   ],
-  "holidays": [
-    {
-      "Date": "2023-10-02",
-      "reason": "gandhi jayati",
-      "id": 3
-    },
-    {
-      "Date": "2023-09-18",
-      "reason": "ganesha chaturthi...",
-      "id": 4
-    },
-    {
-      "Date": "2023-10-17",
-      "reason": "dasserhaaaa",
-      "id": 5
-    }
+  "usrs":[  
+    
+
+{
+  "orgId": 123,
+  "permissionId": 456,
+  "orgAdminId": "abc123",
+  "username": "john_doe",
+  "password": "hashed_password",
+  "mobileNumber": "+1234567890",
+  "nationalId": "1234567890123",
+  "email": "john.doe@example.com"
+}
+
   ],
-  "leavelist": [
+  "orders":[
+
+  ],
+  "invoices":[
+
+  ],
+  "permissions":[
     {
-      "fromdate": "2023-09-22",
-      "todate": "2023-09-24",
-      "reason": "marrige",
-      "status": "rejected",
-      "userid": 974,
-      "name": "user1",
-      "id": 3
-    },
-    {
-      "fromdate": "2023-09-16",
-      "todate": "2023-09-23",
-      "status": "rejected",
-      "userid": 974,
-      "name": "user1",
-      "reason": "xyzabc",
-      "id": 4
+      "permissionId": 456,
+      "mobileNumber": "+1234567890",
+      "orgAdminId": 789,
+      "userStatus": true,
+      "superAdmin": true,
+      "organizationAdmin": false,
+      "merchant": false,
+      "serviceAgent": true,
+      "fieldAgent": false,
+      "inventoryWorker": true,
+      "consumer": false
     }
   ]
 }

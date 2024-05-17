@@ -20,12 +20,12 @@
       padding-right: 100px; /* Add space to the right */
     }
     /* order-details.component.css */
-.order-details {
+.invoicesDetails {
   margin: 20px;
   font-family: Arial, sans-serif;
 }
 
-.order-table {
+.invoicesTable {
   width: 100%;
   border-collapse: collapse;
   background-color: rgba(255, 255, 255, 0.9); /* White background with high opacity */
@@ -33,12 +33,12 @@
   margin-top: 5%;
 }
 
-.order-table td {
+.invoicesTable td {
   padding: 8px;
   border: 1px solid #ddd;
 }
 
-.order-table label {
+.invoicesTable label {
   font-weight: bold;
 }
 

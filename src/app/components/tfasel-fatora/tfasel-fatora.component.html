@@ -1,0 +1,49 @@
+<div class="page-container">
+    <div>
+      <br />
+      <br />
+      <br />
+      <h1>تقرير الفاتورة</h1>
+  <!-- order-details.component.html -->
+  <div class="invoicesDetails" dir="rtl">
+      <table class="invoicesTable">
+          <tr>
+              <td><label for="">رقم الفاتورة :</label></td>
+              <td>{{ invoice?.PaymentReference }}</td>
+          </tr>
+          <tr>
+              <td><label for="">طريقة الدفع :</label></td>
+              <td>{{ invoice?.PaymentOption}}</td>
+          </tr>
+          <tr>
+              <td><label for="">تاريخ الفاتورة :</label></td>
+              <td>{{ invoice?.InvoiceDate | date:'yyyy-MM-dd'  }}</td>
+          </tr>
+          <tr>
+              <td><label for="">إجمالي المبلغ  :</label></td>
+              <td>{{ invoice?.InvoiceAmount | currency }}</td>
+          </tr>
+          <tr>
+              <td><label for="">إسم المؤسسة:</label></td>
+              <td>{{ invoice?.OrganizationName }}</td>
+          </tr>
+          <tr>
+              <td><label for=""> رقم الطلب :</label></td>
+              <td>{{ invoice?.OrderID }}</td>
+          </tr>
+          <tr>
+              <td><label for=""> تاريخ الطلب :</label></td>
+              <td>{{ invoice?.OrderDate }}</td>
+          </tr>
+          <tr>
+              <td><label for="">اسم المستخدم :</label></td>
+              <td>{{ invoice?.Username }}</td>
+          </tr>
+          
+      </table>
+      
+  </div>
+  <button  id="back" (click)="back()">العودة</button>
+    </div>
+  </div>
+  

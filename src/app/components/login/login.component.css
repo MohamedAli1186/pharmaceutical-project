@@ -38,12 +38,14 @@ form {
 input {
   padding: 10px;
   font-size: 1rem;
+  margin-top: 10px;
   border: 1px solid black;
   border-radius: 5px;
 }
 
 button {
   padding: 10px 20px;
+  margin-top: 16px;
   font-size: 1.2rem;
   background-color: #4d9e83;
   color: #ffffff;
@@ -59,4 +61,11 @@ button:hover {
 
 .forgot-password {
   margin-top: 10px; /* Move "Forgot your password?" link under the button */
+}
+#errMsg{
+  color: red;
+  font-size: medium;
+}
+[hidden]{
+  display: none !important;
 }

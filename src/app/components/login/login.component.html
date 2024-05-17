@@ -3,15 +3,22 @@
   <div class="wave-bg">
     <div class="content">
       <h1>تسجيل الدخول</h1>
-      <form>
+      <br>
+      <label id="errMsg" [hidden]="notEmpty">من فضلك ادخل رقم الهاتف و كلمة السر</label>
+      
+      <form #loginForm = "ngForm" (ngSubmit)="login()">
         <div class="input-container">
-          <input type="text" id="phoneNumber" name="phoneNumber" placeholder=" رقم الهاتف" style="width: 90%;" dir="rtl" required>
+          <input (input)="hideErrors()" type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="phone" placeholder=" رقم الهاتف" style="width: 90%;" dir="rtl" ngModel  required>
+          
         </div>
         <div class="input-container">
-          <input type="password" id="password" name="password" placeholder=" كلمة المرور" style="width: 90%;" dir="rtl" required>
+          <input (input)="hideErrors()" type="password" id="password" name="password" [(ngModel)]="password" placeholder=" كلمة المرور" style="width: 90%;" dir="rtl" ngModel required>
+          
         </div>
-     
-        <button  routerLink="/main" type="submit">تسجيل الدخول</button>
+          
+      <label id="errMsg" [hidden]="valid">رقم الهاتف او كلمة السر غير صحيحة</label>
+      <br>
+        <button type="submit">تسجيل الدخول</button>
         <br> 
         <br> 
       </form>

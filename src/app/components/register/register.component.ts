@@ -12,50 +12,27 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   selectedRole: string = '';
 
-  // Create an instance of the Organization class
-  organization = new Organization(
-    1, // orgId
-    'Organization Name', // orgName
-    'banking', // orgType
-    true, // orgStatus
-    12345, // licenseId
-    67890, // financialIdentifier
-    ['path/to/attachment1.jpg', 'path/to/attachment2.jpg'], // attachments
-    123456789 // bankAccountNumber
-  );
-  // Create an instance of the User class
-  User = new User(
-    1, // orgId
-    1, // permissionId
-    'orgAdminId123', // orgAdminId
-    'username123', // username
-    'password123', // password
-    '+1234567890', // mobileNumber
-    '123456789012345', // nationalId
-    'user@example.com' // email
-  );
-
-  @ViewChild('studentForm') studentForm!: NgForm;
-  @ViewChild('instructorForm') instructorForm!: NgForm;
+  password: string = '';
+  email: string = '';
+  userName: string = '';
+  confirmPassword: string = '';
+  phone: string = '';
+  NId: string = '';
+  orgName: string = '';
+  orgStatus: string = '';
+  financialCode: string = '';
+  liscenceCode: string = '';
+  docs: FileList | null = null;
+  bankAccount: string | null = '';
+  orgType: string  = '';
+  submitted = false;
 
   constructor(private router: Router) {}
-
-  onSubmit(role: string) {
-    if (role === 'Student') {
-      if (!this.studentForm || !this.studentForm.valid) {
-        alert('Please fill out all fields.');
-        return;
-      }
-    } else if (role === 'Instructor') {
-      if (!this.instructorForm || !this.instructorForm.valid) {
-        alert('Please fill out all fields.');
-        return;
-      }
+  createOrg(regForm: NgForm) {
+    if(regForm.invalid){
+      this.submitted = true;
+    }else{
+      
     }
-
-    alert('Signed up successfully!');
-    setTimeout(() => {
-      this.router.navigate(['login']);
-    }, 1000);
   }
 }

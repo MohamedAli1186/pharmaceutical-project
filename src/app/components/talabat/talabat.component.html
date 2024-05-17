@@ -6,39 +6,39 @@
         <br/>
         <br/>
         <br/>
-        <h1>تقرير الطلب</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>تفاصيل الطلب</th>
-              <th>رقم الفاتورة</th>
-              <th>الحاله</th>
-              <th>المشتريات</th>
-              <th>رقم الطلب</th>
-              <th>تاريخ الطلب</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Use *ngFor to loop over data and create rows -->
-            <tr>
-              <td><button routerLink="/tfasel">عرض</button></td>
-              <!-- Add more td elements for other columns -->
-              <td>55</td>
-              <td>تم التوصيل</td>
-              <td></td>
-              <td>55</td>
-              <td>8 ابريل 2023</td>
-              <td><input type="checkbox"></td>
-            </tr>
-            <!-- Repeat the above row structure for each row of data -->
-          </tbody>
-        </table>
+        <h1>تقرير الطلبات</h1>
+<!-- src/app/order-list/order-list.component.html -->
+<table class="order-table">
+  <thead>
+    <tr>
+      <th>تفاصيل الطلب</th>
+      <th>رقم الفاتورة</th>
+      <th>حالة الدفع</th>
+      <th>رقم الطلب</th>
+      <th>تاريخ الطلب</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td><button (click)="viewOrderDetails(order.orderId)">عرض</button></td>
+      <td>{{ order.paymentReference }}</td>
+      <td>{{ order.paid  }}</td>
+      <td>{{ order.orderId }}</td>
+      <td>{{ order.orderDate | date:'yyyy-MM-dd' }}</td>
+      <td><input type="checkbox"
+        [checked]="selectedOrderIds.has(order.orderId)" 
+          (change)="toggleSelection(order.orderId)"
+        ></td>
+    </tr>
+  </tbody>
+</table>
+
         <br/>
         <br/>
         <br/>
-        <a ><button class="bn632-hover bn21" onclick="alert('تم رفض الطلبات المحددة')">رفض</button></a>
-        <a ><button class="bn632-hover bn22" onclick="alert('تم تأكيد الطلبات المحددة')">تاكيد</button></a>
+        <a ><button class="bn632-hover bn21" (click)="processSelected(false)">رفض</button></a>
+        <a ><button class="bn632-hover bn22" (click)="processSelected(true)">تاكيد</button></a>
         <a href="main"><button class="bn632-hover bn22">العودة</button></a>
       </div>
       

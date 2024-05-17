@@ -1,46 +1,42 @@
+
 <div class="page-container">
 
-<div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <h1>تقرير الفواتير</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>تفاصيل </th>
-          <th>رقم الفاتورة</th>
-          <th>الحاله</th>
-          <th>المشتريات</th>
-          <th>رقم الطلب</th>
-          <th>تاريخ الطلب</th>
-          <th>تاريخ الفاتورة</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Use *ngFor to loop over data and create rows -->
-        <tr>
-          <td><button>عرض</button></td>
-          <!-- Add more td elements for other columns -->
-          <td>55</td>
-          <td>تم التوصيل</td>
-          <td></td>
-          <td>55</td>
-          <td>8 ابريل 2023</td>       
-          <td>8 ابريل 2023</td>
-          <td><input type="checkbox"></td>
-        </tr>
-        <!-- Repeat the above row structure for each row of data -->
-      </tbody>
-    </table>
-    <br/>
-    <br/>
-    <br/>
-    <a ><button class="bn632-hover bn21" onclick="alert('تم رفض الطلبات المحددة')">رفض</button></a>
-    <a ><button class="bn632-hover bn22" onclick="alert('تم تأكيد الطلبات المحددة')">تاكيد</button></a>
-    <a href="main"><button class="bn632-hover bn22">العودة</button></a>
+  <div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <h1>تقرير الفواتير</h1>
+<!-- src/app/order-list/order-list.component.html -->
+<table class="InvoicesTable">
+<thead>
+  <tr>
+    <th>تفاصيل الفاتورة</th>
+    <th>رقم الطلب</th>
+    <th> المبلغ</th>
+    <th>رقم الفاتورة </th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let invoice of invoices">
+    <td><button (click)="viewInvoiceDetails(invoice.PaymentReference)">عرض</button></td>
+    <td>{{ invoice.OrderID }}</td>
+    <td>{{  invoice.InvoiceAmount  }}</td>
+    <td>{{ invoice.PaymentReference }}</td>
+    <td><input type="checkbox"
+      [checked]="selectedPaymentRef.has(invoice.PaymentReference)" 
+        (change)="toggleSelection(invoice.PaymentReference)"
+      ></td>
+  </tr>
+</tbody>
+</table>
 
-  </div>
-  
+      <br/>
+      <br/>
+      <br/>
+      <a ><button class="bn632-hover bn21" (click)="processSelected(false)">رفض</button></a>
+      <a ><button class="bn632-hover bn22" (click)="processSelected(true)">تاكيد</button></a>
+      <a href="main"><button class="bn632-hover bn22">العودة</button></a>
+    </div>
+    

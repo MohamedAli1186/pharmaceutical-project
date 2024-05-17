@@ -4,20 +4,67 @@
     <br />
     <br />
     <h1>تقرير الطلب</h1>
-
-    <div>
-        <label for="">رقم الطلب :</label> <br/><br/>
-        <label for="">تاريخ الطلب :</label> <br/><br/>
-        <label for="">اجمالي المبلغ :</label> <br/><br/>
-        <label for="">حالة الدفع :  </label> <br/><br/>
-        <label for="">المبلغ المدفوع :</label> <br/><br/>
-        <label for="">المبلغ المتبقي :</label> <br/><br/>
-        <label for="">عدد القطع :</label> <br/><br/>
-        <label for="">تم الاستلام :</label> <br/><br/>
-        <label for="">تاريخ الاستلام :</label> <br/><br/>
-        <label for="">طريقة الدفع : </label> <br/><br/>
-        <label for="">الوحدات المباعة:</label> <br/><br/>
-
-    </div>
+<!-- order-details.component.html -->
+<div class="order-details" dir="rtl">
+    <table class="order-table">
+        <tr>
+            <td><label for="">رقم الطلب :</label></td>
+            <td>{{ order?.orderId }}</td>
+        </tr>
+        <tr>
+            <td><label for="">تاريخ الطلب :</label></td>
+            <td>{{ order?.orderDate | date:'yyyy-MM-dd' }}</td>
+        </tr>
+        <tr>
+            <td><label for="">اجمالي المبلغ :</label></td>
+            <td>{{ order?.orderAmount | currency }}</td>
+        </tr>
+        <tr>
+            <td><label for="">حالة الدفع :</label></td>
+            <td>{{ order?.paid }}</td>
+        </tr>
+        <tr>
+            <td><label for="">المبلغ المدفوع :</label></td>
+            <td>{{ order?.paidAmount | currency }}</td>
+        </tr>
+        <tr>
+            <td><label for="">المبلغ المتبقي :</label></td>
+            <td>{{ order?.remainingAmount | currency }}</td>
+        </tr>
+        <tr>
+            <td><label for="">عدد القطع :</label></td>
+            <td>{{ order?.itemsCount }}</td>
+        </tr>
+        <tr>
+            <td><label for="">تم الاستلام :</label></td>
+            <td>{{ order?.received ? 'نعم' : 'لا' }}</td>
+        </tr>
+        <tr>
+            <td><label for="">تاريخ الاستلام :</label></td>
+            <td>{{ order?.receiveTime | date:'yyyy-MM-dd' }}</td>
+        </tr>
+        <tr>
+            <td><label for="">مرجع الدفع :</label></td>
+            <td>{{ order?.paymentReference }}</td>
+        </tr>
+        <tr>
+            <td><label for="">الوحدات المباعة:</label></td>
+            <td>
+                <button (click)="toggleSoldUnits()">
+                    {{ showSoldUnits ? 'إخفاء' : 'عرض' }} الوحدات المباعة
+                </button>
+                <div *ngIf="showSoldUnits">
+                    <ul>
+                        <li *ngFor="let unit of order?.skus">
+                            {{ unit.name }} - الكمية: {{ unit.count }} - السعر: {{ unit.price | currency }}
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+</div>
+<button  id="back" (click)="back()">العودة</button>
   </div>
 </div>

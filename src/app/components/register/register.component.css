@@ -79,3 +79,6 @@ button:hover {
 #docs {
   opacity: 40%;
 }
+.requiredField{
+  color: rgb(255, 0, 0) !important;
+}
