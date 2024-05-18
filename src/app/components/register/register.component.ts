@@ -1,5 +1,5 @@
-import { User } from './../../DataModels/User.model';
-import { Organization } from './../../DataModels/Organization.model';
+import { User } from '../../DataModels/User.model';
+import { Organization } from '../../DataModels/Organization.model';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';

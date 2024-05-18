@@ -15,6 +15,15 @@
   height: 50vh;
 }
 
+.bn48 {
+  background: linear-gradient(90deg, #001f99, #ff0800);
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 300% 300%;
+  -webkit-text-fill-color: transparent;
+}
 .content {
   text-align: center;
   padding: 20px;

@@ -13,6 +13,9 @@ import { FawaterComponent } from './components/fawater/fawater.component';
 import { TalabatComponent } from './components/talabat/talabat.component';
 import { TfaselComponent } from './components/tfasel/tfasel.component';
 import { TfaselFatoraComponent } from './components/tfasel-fatora/tfasel-fatora.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PrivacyComponent } from './components/footer/privacy/privacy.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { TfaselFatoraComponent } from './components/tfasel-fatora/tfasel-fatora.
     FawaterComponent,
     TalabatComponent,
     TfaselComponent,
-    TfaselFatoraComponent
+    TfaselFatoraComponent,
+    NavbarComponent,
+    FooterComponent,
+    PrivacyComponent
    
   ],
   imports: [
